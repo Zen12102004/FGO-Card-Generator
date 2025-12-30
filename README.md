@@ -4,7 +4,7 @@ updated with more cards
 including grand,forigner,pretender and more beast
 
 ## Background
-Forked from meguerreroa's fgo generator
+Forked from meguerreroa's fgo generator and
 Several projects that experiment on HTML5 canvas which is an expansion of juncaixinchi's original concept of using canvas to generate FGO cards. 
 
 
