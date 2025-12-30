@@ -91,6 +91,22 @@
     }
   </style>
   <script type = "text/javascript">
+    let dark = false
+    function darkMode(){
+      let dmButton = document.getElementById("darkModechange");
+      if (!dark) {
+        document.body.style.background = "linear-gradient(-45deg, #121212 25%, #1c1c1c 0, #1c1c1c 50%, #121212 0, #121212 75%, #1c1c1c 0)";
+        //document.getElementById("main-container").style.background ="linear-gradient(-45deg, #121212 25%, #1c1c1c 0, #1c1c1c 50%, #121212 0, #121212 75%, #1c1c1c 0)";
+        dmButton.innerText = "Change to Light Mode"
+        dark = true;
+      }else {
+        document.body.style.background ="linear-gradient(-45deg, #F2F2F2 25%, #F5F5F5 0, #F5F5F5 50%, #F2F2F2 0, #F2F2F2 75%, #F5F5F5 0)";
+        //document.getElementById("main-container").style.background ="linear-gradient(-45deg, #F2F2F2 25%, #F5F5F5 0, #F5F5F5 50%, #F2F2F2 0, #F2F2F2 75%, #F5F5F5 0)";
+        dmButton.innerText = "Change to Dark Mode"
+        dark = false;
+      }
+
+    }
     function preLoadImg(url) 
     { 
       const img = new Image(); 
@@ -221,6 +237,8 @@
             "avenger":   [ 213, 752 ],
  	    "mooncancer":   [ 213, 752 ],
 	    "alterego":   [ 213, 752 ],
+		"foreigner": [ 213, 752 ],
+		"pretender": [ 213, 752 ],
             "beast":     [ 213, 752 ],
             "all":       [ 213, 752 ],
             "none":      [ 213, 752 ],
@@ -265,8 +283,9 @@
 <body onresize = "resize()">
   <div id = "main-container" >
     <div style = "font-size: 35px; text-align: center; color: green">FGO Card Generator</div> 
-    <div style = "text-align: center; font-size: 15px; padding-bottom: 20px">Original Code by juncaixinchi<br>Expanded by Aister<br>Even further by Azuto</div>
-    Rarity<br><br>
+    <div style = "text-align: center; font-size: 15px; padding-bottom: 20px">Original Code by juncaixinchi<br>Expanded by Aister<br>Even further by Azuto<br>Even further by Zen1210(Megatronix)</div>
+    <button id="darkModechange" onclick="darkMode()">Change to Dark Mode</button> <br>Rarity<br><br>
+    
     <select id = "Hero_rarity" style = "max-width:250px; width: 100%">
       <option value = "0">0 ☆ (Servant only)</option>
       <option value = "1">1 ☆</option>
@@ -274,7 +293,24 @@
       <option value = "3">3 ☆</option>
       <option value = "4">4 ☆</option>
       <option value = "5">5 ☆</option>
-      <option value = "B">5B☆ (Servant only)</option>
+      <option value = "B">5 ☆ Beast Graph 1 (Servant only)</option>
+      <option value="D">No Star Beast Graph 2 (Servant only)</option>
+      <option value="D4">4 ☆ Beast Graph 2 (Servant only)</option>
+      <option value="D5">5 ☆ Beast Graph 2 (Servant only)</option>
+      <option value="O">No Star Beast Graph 3 (Servant only)</option>
+      <option value="O4">4 ☆ Beast Graph 3 (Servant only)</option>
+      <option value="O5">5 ☆ Beast Graph 3 (Servant only)</option>
+      <option value="G5A">5 ☆ Grand Graph 1 (Servant only) </option>
+      <option value="G4A">4 ☆ Grand Graph 1 (Servant only) </option>
+      <option value="G3A">3 ☆Grand Graph 1 (Servant only) </option>
+      <option value="G2A">2 ☆ Grand Graph 1 (Servant only) </option>
+      <option value="G1A">1 ☆ Grand Graph 1 (Servant only) </option>
+      <option value="G5B">5 ☆ Grand Graph 2 (Servant only) </option>
+      <option value="G4B">4 ☆ Grand Graph 2 (Servant only) </option>
+      <option value="G3B">3 ☆ Grand Graph 2 (Servant only) </option>
+      <option value="G2B">2 ☆ Grand Graph 2 (Servant only) </option>
+      <option value="G1B">1 ☆ Grand Graph 2 (Servant only) </option>
+      
     </select><br><br>
     <div style = "text-align: left; display:inline-block; width:50px">ATK：</div><input type = "number" id = "ATK">
     <br>
@@ -314,6 +350,8 @@
           <option value = "avenger">Avenger</option>
           <option value = "mooncancer">Moon Cancer</option>
           <option value = "alterego">Alter Ego</option>
+		  <option value="foreigner">Foreigner</option>
+		  <option value="pretender">Pretender</option>
           <option value = "beast">Beast</option>
           <option value = "all">All</option>
           <option value = "none">None</option>
