@@ -97,7 +97,7 @@
       if (!dark) {
         document.body.style.background = "linear-gradient(-45deg, #121212 25%, #1c1c1c 0, #1c1c1c 50%, #121212 0, #121212 75%, #1c1c1c 0)";
         document.getElementById("main-container").style.background ="linear-gradient(-45deg, #121212 25%, #1c1c1c 0, #1c1c1c 50%, #121212 0, #121212 75%, #1c1c1c 0)";
-        document.getElementById("main-container").style.color = "white"
+        document.getElementById("main-container").style.color = "antiquewhite"
         dmButton.innerText = "Change to Light Mode"
         dark = true;
       }else {
@@ -216,8 +216,12 @@
           img_logo.src = "img/fgo/" + Hero_class + "1.png";
         } else if (Hero_rarity == 3) {
           img_logo.src = "img/fgo/" + Hero_class + "2.png";
-        } else {
+        } else if([4, 5, "G5A", "G4A","G3A","G2A","G1A"].includes(Hero_rarity)) {
           img_logo.src = "img/fgo/" + Hero_class + "3.png";
+        }else if([4, 5, "G5B", "G4B","G3B","G2B","G1B"].includes(Hero_rarity)) {
+          img_logo.src = "img/fgo/" + Hero_class + "4.png";
+        }else{
+          img_logo.src = "img/fgo/" + Hero_class + "5.png";
         }
         img_frame.src = "img/fgo/S" + Hero_rarity + ".png";
         preLoadImg(img_frame.src);
